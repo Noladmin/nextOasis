@@ -128,7 +128,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$1_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-sm leading-relaxed",
-                                    children: "Digital Solutions Studio. We design and build websites, mobile apps, UI/UX solutions, and SaaS products for businesses in the UK, Ghana, and across the globe."
+                                    children: "Building Innovative IT Solutions. At Next Oasis we offer a range of solutions tailored specifically to meet the needs of your organisation be it SME or Multi-national. Our team of experienced professionals will help your business achieve digital advantage across every business area."
                                 }, void 0, false, {
                                     fileName: "[project]/components/Footer.tsx",
                                     lineNumber: 12,
@@ -522,9 +522,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$tsx_
 ;
 ;
 const metadata = {
-    title: "Next Oasis - Digital Solutions Studio | Web Development, Mobile Apps & UI/UX Design",
-    description: "Next Oasis builds fast, responsive websites, mobile apps, and digital products. Web development, mobile app development, UI/UX design, and tech support services in the UK and Ghana.",
-    keywords: "web development agency UK, mobile app development company, UI/UX design services, SaaS product development, digital agency UK Ghana, front-end development services, custom website builders, mobile app developers Ghana",
+    title: "Next Oasis - Building Innovative IT Solutions | Digital Agency UK & Ghana",
+    description: "At Next Oasis we offer a range of solutions tailored specifically to meet the needs of your organisation be it SME or Multi-national. Our team of experienced professionals will help your business achieve digital advantage across every business area.",
+    keywords: "IT solutions UK, digital agency UK, web development agency, mobile app development company, UI/UX design services, tech support consulting, digital transformation, SME solutions, multi-national IT services, Next.js development, React development, Southampton digital agency, Accra web developers",
     icons: {
         icon: [
             {

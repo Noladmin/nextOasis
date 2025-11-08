@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h3 className="text-2xl font-bold text-white mb-4">Next Oasis</h3>
             <p className="text-sm leading-relaxed">
-              Digital Solutions Studio. We design and build websites, mobile apps, UI/UX solutions, and SaaS products for businesses in the UK, Ghana, and across the globe.
+              Building Innovative IT Solutions. At Next Oasis we offer a range of solutions tailored specifically to meet the needs of your organisation be it SME or Multi-national. Our team of experienced professionals will help your business achieve digital advantage across every business area.
             </p>
           </div>
 

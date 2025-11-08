@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next Oasis - Digital Solutions Studio | Web Development, Mobile Apps & UI/UX Design",
-  description: "Next Oasis builds fast, responsive websites, mobile apps, and digital products. Web development, mobile app development, UI/UX design, and tech support services in the UK and Ghana.",
-  keywords: "web development agency UK, mobile app development company, UI/UX design services, SaaS product development, digital agency UK Ghana, front-end development services, custom website builders, mobile app developers Ghana",
+  title: "Next Oasis - Building Innovative IT Solutions | Digital Agency UK & Ghana",
+  description: "At Next Oasis we offer a range of solutions tailored specifically to meet the needs of your organisation be it SME or Multi-national. Our team of experienced professionals will help your business achieve digital advantage across every business area.",
+  keywords: "IT solutions UK, digital agency UK, web development agency, mobile app development company, UI/UX design services, tech support consulting, digital transformation, SME solutions, multi-national IT services, Next.js development, React development, Southampton digital agency, Accra web developers",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

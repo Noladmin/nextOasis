@@ -76,7 +76,7 @@ export default function TestimonialCarousel({
   if (testimonials.length === 0) return null;
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full px-8 sm:px-12 md:px-0">
       {/* Carousel Container */}
       <div className="relative overflow-hidden rounded-xl">
         <div
@@ -88,7 +88,7 @@ export default function TestimonialCarousel({
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="min-w-full flex-shrink-0 px-2"
+              className="min-w-full flex-shrink-0 px-2 sm:px-4"
             >
               <div className="max-w-4xl mx-auto">
                 <TestimonialCard
@@ -107,14 +107,14 @@ export default function TestimonialCarousel({
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 sm:left-4 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-12 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors"
+            className="absolute left-0 sm:left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-12 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-[#293796]" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 sm:right-4 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-12 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors"
+            className="absolute right-0 sm:right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-12 z-10 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-100 transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-[#293796]" />

@@ -31,7 +31,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo.png"
+              src="/assets/brands/logo.png"
               alt="Next Oasis"
               width={150}
               height={40}
