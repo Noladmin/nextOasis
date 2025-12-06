@@ -101,7 +101,6 @@ export default function Footer() {
                   <div className="break-words">
                     <p>15 Rockstone Place</p>
                     <p>SO15 2EP Southampton, UK</p>
-                    <p className="mt-1">Accra, Ghana</p>
                   </div>
                 </div>
               </li>
