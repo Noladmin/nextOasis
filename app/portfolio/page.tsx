@@ -3,6 +3,7 @@ import PageBanner from "@/components/PageBanner";
 import Button from "@/components/Button";
 import PortfolioCard from "@/components/PortfolioCard";
 import { ArrowRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Our Portfolio - Next Oasis | High-Quality Digital Experiences & Projects",
@@ -20,58 +21,33 @@ export default function PortfolioPage() {
         overlayType="dark"
       />
 
-      <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-[radial-gradient(circle_at_top,#eef4ff_0%,#ffffff_50%,#f8fafc_100%)]">
+        <div className="pointer-events-none absolute inset-0 opacity-60">
+          <div className="tech-grid absolute inset-0" />
+          <div className="absolute left-[-8%] top-10 h-52 w-52 rounded-full bg-[#293796]/10 blur-3xl" />
+          <div className="absolute right-[-8%] bottom-0 h-60 w-60 rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We've helped brands and startups craft high-quality digital experiences — from responsive websites to full-featured mobile apps. Every project reflects precision, performance, and thoughtful design.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our portfolio is built around real delivery work. Each project combines product thinking, interface design, and modern frontend execution to help brands present themselves with more clarity and more credibility online.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {/* Portfolio items - replace with actual project data */}
-            <PortfolioCard
-              imageSrc="/assets/images/business-person-using-laptop-multitasking-finish-daily-startup-tasks.webp"
-              title="E-Commerce Platform"
-              description="A modern e-commerce solution with seamless checkout and inventory management."
-              tags={["Web Development", "UI/UX Design"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/black-girl-engages-with-virtual-reality-while-partner-works-laptop-desk.webp"
-              title="Mobile Banking App"
-              description="Secure mobile banking application with biometric authentication and real-time transactions."
-              tags={["Mobile App", "iOS", "Android"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/online-shopping-concept.webp"
-              title="SaaS Dashboard"
-              description="Analytics dashboard with real-time data visualization and custom reporting."
-              tags={["Web Development", "React", "Next.js"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/business-person-using-laptop-multitasking-finish-daily-startup-tasks.webp"
-              title="Healthcare Portal"
-              description="Patient management system with appointment scheduling and medical records."
-              tags={["Web Development", "Healthcare"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/black-girl-engages-with-virtual-reality-while-partner-works-laptop-desk.webp"
-              title="Fitness Tracking App"
-              description="Cross-platform fitness app with workout plans and progress tracking."
-              tags={["Mobile App", "React Native"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/online-shopping-concept.webp"
-              title="Real Estate Platform"
-              description="Property listing platform with virtual tours and advanced search filters."
-              tags={["Web Development", "UI/UX"]}
-              websiteUrl="https://example.com"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+            {projects.map((project) => (
+              <PortfolioCard
+                key={project.title}
+                imageSrc={project.imageSrc}
+                title={project.title}
+                client={project.client}
+                description={project.description}
+                tags={project.tags}
+                websiteUrl={project.websiteUrl || undefined}
+                status={project.status}
+              />
+            ))}
           </div>
 
           <div className="text-center">
@@ -79,7 +55,7 @@ export default function PortfolioPage() {
               Have a Project in Mind?
             </h3>
             <p className="text-gray-600 mb-6">
-              Let's create something extraordinary together.
+              Let&apos;s create something extraordinary together.
             </p>
             <Button href="/contact" variant="primary">
               Start Your Project
@@ -91,4 +67,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-

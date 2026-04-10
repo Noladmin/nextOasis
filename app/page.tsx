@@ -1,20 +1,18 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
-import TestimonialCard from "@/components/TestimonialCard";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
-import BrandsSection from "@/components/BrandsSection";
 import StatsCard from "@/components/StatsCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { featuredProjects } from "@/data/projects";
 import {
   Globe,
   Smartphone,
   Palette,
   Wrench,
   ArrowRight,
-  CheckCircle,
   Users,
   CheckCircle2,
   Ear,
@@ -33,21 +31,23 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  // Brands/Partners we've worked with
-  const brands: Array<{ src: string; alt: string; name?: string }> = [
+  const clientProof = [
     {
-      src: "/assets/brands/SouthLogo.png",
-      alt: "South Town Catering Services",
       name: "South Town Catering Services",
+      logoSrc: "/assets/brands/SouthLogo.png",
+      href: "https://www.southtownplace.com/",
+      summary:
+        "Live food commerce platform with payment integration and instant customer messaging through SMS gateway flows.",
+      facts: ["Live customer project", "Payments integrated", "SMS notifications connected"],
     },
     {
-      src: "/assets/brands/TastyBowlsLogo.png",
-      alt: "Tasty Bowls",
       name: "Tasty Bowls",
+      logoSrc: "/assets/brands/TastyBowlsLogo.png",
+      href: "https://tasty-bowls.com/",
+      summary:
+        "Live ordering website for a food business, built to support online transactions and real-time customer communication.",
+      facts: ["Real business client", "Food ordering flow", "Live production website"],
     },
-    // Add more brand logos here
-    // Example:
-    // { src: "/assets/brands/brand2.png", alt: "Brand Name 2", name: "Brand Name 2" },
   ];
 
   return (
@@ -77,7 +77,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button href="/contact" variant="primary">
-              Let's Build Your Project
+              Let&apos;s Build Your Project
             </Button>
             <Button href="/portfolio" variant="secondary">
               Explore Our Work
@@ -281,42 +281,39 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section id="portfolio" className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-[radial-gradient(circle_at_top,#eef4ff_0%,#ffffff_50%,#f8fafc_100%)]">
+        <div className="pointer-events-none absolute inset-0 opacity-60">
+          <div className="tech-grid absolute inset-0" />
+          <div className="absolute left-[-10%] top-12 h-48 w-48 rounded-full bg-[#293796]/10 blur-3xl" />
+          <div className="absolute right-[-8%] bottom-0 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
           <AnimateOnScroll>
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                 Our Work Speaks for Itself
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We've helped brands and startups craft high-quality digital experiences — from responsive websites to full-featured mobile apps. Every project reflects precision, performance, and thoughtful design.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Real client work, presented with the same attention to usability, performance, and visual execution that we bring into every delivery. These featured builds show how strategy, design, and engineering come together in practice.
               </p>
             </div>
           </AnimateOnScroll>
           
           <AnimateOnScroll delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            <PortfolioCard
-              imageSrc="/assets/images/business-person-using-laptop-multitasking-finish-daily-startup-tasks.webp"
-              title="E-Commerce Platform"
-              description="A modern e-commerce solution with seamless checkout and inventory management for retail businesses."
-              tags={["Web Development", "UI/UX Design"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/black-girl-engages-with-virtual-reality-while-partner-works-laptop-desk.webp"
-              title="Mobile Banking App"
-              description="Secure mobile banking application with biometric authentication and real-time transaction processing."
-              tags={["Mobile App", "iOS", "Android"]}
-              websiteUrl="https://example.com"
-            />
-            <PortfolioCard
-              imageSrc="/assets/images/online-shopping-concept.webp"
-              title="SaaS Dashboard"
-              description="Analytics dashboard with real-time data visualization and custom reporting features for businesses."
-              tags={["Web Development", "React", "Next.js"]}
-              websiteUrl="https://example.com"
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+              {featuredProjects.map((project) => (
+                <PortfolioCard
+                  key={project.title}
+                  imageSrc={project.imageSrc}
+                  title={project.title}
+                  client={project.client}
+                  description={project.description}
+                  tags={project.tags}
+                  websiteUrl={project.websiteUrl || undefined}
+                  status={project.status}
+                />
+              ))}
             </div>
           </AnimateOnScroll>
 
@@ -331,51 +328,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-gray-50">
+      {/* Real Client Section */}
+      <section id="clients" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <AnimateOnScroll>
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                What Our Clients Say
+                Trusted By Real Clients
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                We're proud to partner with businesses to create digital products that work. Here's what a few of them have to say:
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Until approved testimonials are available, we show real delivery proof instead of placeholder quotes. These are active customer projects built for live businesses.
               </p>
             </div>
           </AnimateOnScroll>
-          
+
           <AnimateOnScroll delay={100}>
-            <TestimonialCarousel
-            testimonials={[
-              {
-                quote: "I recently used Next Oasis for our Corporate Design project and they exceeded my expectations. Their work is outstanding and turnaround amazing. I would not hesitate to recommend them to anyone.",
-                author: "Shula Duku",
-              },
-              {
-                quote: "Thank you for your efficient and professional service. And more importantly the result we got at the end of the Project.",
-                author: "James Achnif",
-              },
-              {
-                quote: "I've been using Next Oasis for the past years, and I can't express how much it has transformed the way I run my business. The user-friendly interface and robust features have made managing my projects a breeze.",
-                author: "Philip Dah",
-              },
-            ]}
-            autoPlay={true}
-            autoPlayInterval={5000}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {clientProof.map((client) => (
+                <article
+                  key={client.name}
+                  className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]"
+                >
+                  <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                    <div className="flex min-h-16 items-center">
+                      <Image
+                        src={client.logoSrc}
+                        alt={client.name}
+                        width={160}
+                        height={64}
+                        className="h-auto max-h-14 w-auto object-contain"
+                      />
+                    </div>
+                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                      Live client
+                    </span>
+                  </div>
+
+                  <h3 className="mb-3 text-2xl font-bold tracking-tight text-slate-950">
+                    {client.name}
+                  </h3>
+                  <p className="mb-5 text-sm leading-6 text-slate-600 sm:text-[15px]">
+                    {client.summary}
+                  </p>
+
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {client.facts.map((fact) => (
+                      <span
+                        key={fact}
+                        className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+                      >
+                        {fact}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={client.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#293796]"
+                  >
+                    Visit live site
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </article>
+              ))}
+            </div>
           </AnimateOnScroll>
         </div>
       </section>
-
-      {/* Brands Section */}
-      {brands.length > 0 && (
-        <BrandsSection
-          title="Trusted by Leading Brands"
-          subtitle="We're proud to work with innovative companies and help bring their digital visions to life"
-          brands={brands}
-        />
-      )}
 
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#293796] to-[#1f2a6f] text-white">
@@ -384,7 +405,7 @@ export default function Home() {
             Ready to Build Something Extraordinary?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed px-4">
-            Let's turn your vision into a scalable, high-performance digital product.
+            Let&apos;s turn your vision into a scalable, high-performance digital product.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Button href="/contact" variant="primary">
