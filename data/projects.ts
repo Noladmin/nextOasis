@@ -29,6 +29,16 @@ export const projects: ProjectItem[] = [
     websiteUrl: "https://tasty-bowls.com/",
     status: "Live client work",
   },
+  {
+    title: "Next Oasis Care Healthcare Staffing Website",
+    client: "Next Oasis Care",
+    description:
+      "Healthcare staffing website built to present trained care assistants and communicate staffing support for residential care homes, nursing homes, day centres, rehabilitation centres, home care, and supported living.",
+    imageSrc: "/assets/brands/projectImages/NextOasisCare.png",
+    tags: ["Healthcare Staffing", "Care Services", "Service Website"],
+    websiteUrl: "https://nextoasiscare.co.uk/",
+    status: "Live client work",
+  },
 ];
 
 export const featuredProjects = projects.slice(0, 2);

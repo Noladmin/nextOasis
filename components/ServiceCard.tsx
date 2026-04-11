@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
@@ -15,28 +14,37 @@ export default function ServiceCard({
   features,
 }: ServiceCardProps) {
   return (
-    <div className="group relative bg-white rounded-2xl border border-gray-200 hover:border-[#293796]/30 shadow-sm hover:shadow-xl transition-all duration-300 p-6 lg:p-8 h-full overflow-hidden">
+    <article className="group relative flex h-full min-h-[340px] flex-col overflow-hidden rounded-[22px] border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#293796]/30 hover:shadow-lg lg:min-h-[360px] lg:p-6">
       {/* Gradient Background on Hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#293796]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
-      <div className="relative z-10">
-        <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#293796] to-[#1f2a6f] mb-6 group-hover:scale-110 transition-transform duration-300">
-          <Icon className="h-7 w-7 text-white" />
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#293796] to-[#1f2a6f] transition-transform duration-300 group-hover:scale-105">
+          <Icon className="h-6 w-6 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#293796] transition-colors">{title}</h3>
-        <p className="text-gray-600 mb-6 leading-relaxed text-base">{description}</p>
+
+        <div className="mb-4 space-y-2.5">
+          <h3 className="max-w-[22ch] text-xl font-bold leading-tight text-gray-900 transition-colors group-hover:text-[#293796] lg:text-[1.35rem]">
+            {title}
+          </h3>
+          <p className="text-sm leading-6 text-gray-600 lg:text-[15px]">
+            {description}
+          </p>
+        </div>
+
         {features && features.length > 0 && (
-          <ul className="space-y-3">
-            {features.map((feature, index) => (
-              <li key={index} className="flex items-start text-sm text-gray-600">
-                <span className="text-[#293796] mr-3 mt-1">✓</span>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-auto border-t border-slate-100 pt-5">
+            <ul className="space-y-3">
+              {features.map((feature, index) => (
+                <li key={index} className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm leading-5 text-gray-600">
+                  <span className="mt-0.5 text-[#293796]">✓</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }
-

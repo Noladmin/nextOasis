@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
+import ServicesCarousel from "@/components/ServicesCarousel";
 import StatsCard from "@/components/StatsCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { featuredProjects } from "@/data/projects";
+import { projects } from "@/data/projects";
 import {
   Globe,
   Smartphone,
@@ -35,18 +35,23 @@ export default function Home() {
     {
       name: "South Town Catering Services",
       logoSrc: "/assets/brands/SouthLogo.png",
-      href: "https://www.southtownplace.com/",
-      summary:
-        "Live food commerce platform with payment integration and instant customer messaging through SMS gateway flows.",
-      facts: ["Live customer project", "Payments integrated", "SMS notifications connected"],
+      role: "CEO",
+      summary: "Approved testimonial from this client will be added here.",
+      facts: ["Testimonial pending", "Live customer project", "Payments integrated"],
     },
     {
       name: "Tasty Bowls",
       logoSrc: "/assets/brands/TastyBowlsLogo.png",
-      href: "https://tasty-bowls.com/",
-      summary:
-        "Live ordering website for a food business, built to support online transactions and real-time customer communication.",
-      facts: ["Real business client", "Food ordering flow", "Live production website"],
+      role: "CEO",
+      summary: "Approved testimonial from this client will be added here.",
+      facts: ["Testimonial pending", "Real business client", "Live production website"],
+    },
+    {
+      name: "Next Oasis Care",
+      logoSrc: "/assets/brands/nextOasisCare.png",
+      role: "CEO",
+      summary: "Approved testimonial from this client will be added here.",
+      facts: ["Testimonial pending", "Healthcare staffing", "Live production website"],
     },
   ];
 
@@ -225,58 +230,62 @@ export default function Home() {
             </div>
           </AnimateOnScroll>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            <ServiceCard
-              icon={Globe}
-              title="Web Development"
-              description="We craft websites that are not only visually stunning but also fast, secure, and search-engine optimized. Whether it's a landing page, e-commerce store, or SaaS platform, we design with performance and scalability in mind."
-              features={[
-                "Modern frameworks like React, Vite, Next.js",
-                "Mobile-first responsive design",
-                "Optimized for speed and SEO",
-                "Custom backend or CMS integration",
-                "Seamless deployment & ongoing support",
-              ]}
-            />
-            
-            <ServiceCard
-              icon={Smartphone}
-              title="Mobile App Development"
-              description="Our team creates intuitive mobile apps that delight users across iOS and Android. From concept to launch, we ensure your app is reliable, fast, and built to scale."
-              features={[
-                "Cross-platform development with React Native / Expo",
-                "Smooth, offline-ready experiences",
-                "Push notifications and real-time updates",
-                "API integrations and cloud support",
-                "App store submission and guidance",
-              ]}
-            />
-            
-            <ServiceCard
-              icon={Palette}
-              title="UI/UX Design"
-              description="We transform ideas into user-centric designs that are visually striking and easy to navigate. Every interface we create is built for engagement and usability."
-              features={[
-                "Wireframes & interactive prototypes",
-                "Complete UI kits & style guides",
-                "Optimized user flows",
-                "High-fidelity mockups",
-                "Redesigns that improve conversion and usability",
-              ]}
-            />
-            
-            <ServiceCard
-              icon={Wrench}
-              title="Tech Support & Consulting"
-              description="We help businesses maintain, optimize, and scale their digital products. From troubleshooting to strategic advice, we're your reliable tech partner."
-              features={[
-                "Website & app maintenance",
-                "Bug fixing & troubleshooting",
-                "Hosting, deployment, and upgrades",
-                "Digital strategy & roadmap consulting",
-              ]}
-            />
-          </div>
+          <AnimateOnScroll delay={100}>
+            <div className="mx-auto max-w-4xl">
+              <ServicesCarousel>
+                <ServiceCard
+                  icon={Globe}
+                  title="Web Development"
+                  description="We craft websites that are not only visually stunning but also fast, secure, and search-engine optimized. Whether it's a landing page, e-commerce store, or SaaS platform, we design with performance and scalability in mind."
+                  features={[
+                    "Modern frameworks like React, Vite, Next.js",
+                    "Mobile-first responsive design",
+                    "Optimized for speed and SEO",
+                    "Custom backend or CMS integration",
+                    "Seamless deployment & ongoing support",
+                  ]}
+                />
+
+                <ServiceCard
+                  icon={Smartphone}
+                  title="Mobile App Development"
+                  description="Our team creates intuitive mobile apps that delight users across iOS and Android. From concept to launch, we ensure your app is reliable, fast, and built to scale."
+                  features={[
+                    "Cross-platform development with React Native / Expo",
+                    "Smooth, offline-ready experiences",
+                    "Push notifications and real-time updates",
+                    "API integrations and cloud support",
+                    "App store submission and guidance",
+                  ]}
+                />
+
+                <ServiceCard
+                  icon={Palette}
+                  title="UI/UX Design"
+                  description="We transform ideas into user-centric designs that are visually striking and easy to navigate. Every interface we create is built for engagement and usability."
+                  features={[
+                    "Wireframes & interactive prototypes",
+                    "Complete UI kits & style guides",
+                    "Optimized user flows",
+                    "High-fidelity mockups",
+                    "Redesigns that improve conversion and usability",
+                  ]}
+                />
+
+                <ServiceCard
+                  icon={Wrench}
+                  title="Tech Support & Consulting"
+                  description="We help businesses maintain, optimize, and scale their digital products. From troubleshooting to strategic advice, we're your reliable tech partner."
+                  features={[
+                    "Website & app maintenance",
+                    "Bug fixing & troubleshooting",
+                    "Hosting, deployment, and upgrades",
+                    "Digital strategy & roadmap consulting",
+                  ]}
+                />
+              </ServicesCarousel>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -302,7 +311,7 @@ export default function Home() {
           
           <AnimateOnScroll delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-              {featuredProjects.map((project) => (
+              {projects.map((project) => (
                 <PortfolioCard
                   key={project.title}
                   imageSrc={project.imageSrc}
@@ -328,71 +337,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Real Client Section */}
+      {/* Testimonials Section */}
       <section id="clients" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <AnimateOnScroll>
             <div className="text-center mb-12 lg:mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                Trusted By Real Clients
+                Testimonials
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Until approved testimonials are available, we show real delivery proof instead of placeholder quotes. These are active customer projects built for live businesses.
+                Approved client testimonials will be added here. For now, this section is reserved for feedback from real businesses we have worked with.
               </p>
             </div>
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {clientProof.map((client) => (
-                <article
-                  key={client.name}
-                  className="rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)]"
-                >
-                  <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
-                    <div className="flex min-h-16 items-center">
-                      <Image
-                        src={client.logoSrc}
-                        alt={client.name}
-                        width={160}
-                        height={64}
-                        className="h-auto max-h-14 w-auto object-contain"
-                      />
-                    </div>
-                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700">
-                      Live client
-                    </span>
-                  </div>
-
-                  <h3 className="mb-3 text-2xl font-bold tracking-tight text-slate-950">
-                    {client.name}
-                  </h3>
-                  <p className="mb-5 text-sm leading-6 text-slate-600 sm:text-[15px]">
-                    {client.summary}
-                  </p>
-
-                  <div className="mb-6 flex flex-wrap gap-2">
-                    {client.facts.map((fact) => (
-                      <span
-                        key={fact}
-                        className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
-                      >
-                        {fact}
-                      </span>
-                    ))}
-                  </div>
-
-                  <Link
-                    href={client.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#293796]"
+            <div className="mx-auto max-w-4xl">
+              <ServicesCarousel slideClassName="min-w-0 flex-[0_0_100%] pl-3">
+                {clientProof.map((client) => (
+                  <article
+                    key={client.name}
+                    className="flex h-full min-h-[320px] flex-col rounded-[24px] border border-slate-200 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.06)] lg:p-7"
                   >
-                    Visit live site
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </article>
-              ))}
+                    <div className="mb-6 flex items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                      <div className="flex items-center gap-4">
+                        <span className="text-sm font-semibold tracking-[0.24em] text-slate-400">
+                          {String(clientProof.indexOf(client) + 1).padStart(2, "0")}
+                        </span>
+                        <div className="flex min-h-16 items-center">
+                          <Image
+                            src={client.logoSrc}
+                            alt={client.name}
+                            width={170}
+                            height={68}
+                            className="h-auto max-h-14 w-auto object-contain"
+                          />
+                        </div>
+                      </div>
+                      <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-700">
+                        Pending quote
+                      </span>
+                    </div>
+
+                    <div className="mb-5 space-y-3">
+                      <h3 className="text-2xl font-bold tracking-tight text-slate-950">
+                        {client.name}
+                      </h3>
+                      <p className="text-sm font-medium uppercase tracking-[0.24em] text-slate-400">
+                        {client.role}, {client.name}
+                      </p>
+                      <p className="text-sm italic leading-6 text-slate-600 sm:text-[15px]">
+                        {client.summary}
+                      </p>
+                    </div>
+
+                    <div className="mb-6 flex flex-wrap gap-2">
+                      {client.facts.map((fact) => (
+                        <span
+                          key={fact}
+                          className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+                        >
+                          {fact}
+                        </span>
+                      ))}
+                    </div>
+
+                  </article>
+                ))}
+              </ServicesCarousel>
             </div>
           </AnimateOnScroll>
         </div>
