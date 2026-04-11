@@ -6,7 +6,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import StatsCard from "@/components/StatsCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
-import { projects } from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 import {
   Globe,
   Smartphone,
@@ -52,6 +52,20 @@ export default function Home() {
       role: "CEO",
       summary: "Approved testimonial from this client will be added here.",
       facts: ["Testimonial pending", "Healthcare staffing", "Live production website"],
+    },
+    {
+      name: "Zebral Global Integrated Services",
+      logoSrc: "/assets/brands/Zebra.png",
+      role: "CEO",
+      summary: "Approved testimonial from this client will be added here.",
+      facts: ["Testimonial pending", "Corporate services", "Live production website"],
+    },
+    {
+      name: "Ascension Anglican Church, Houston TX",
+      logoSrc: "/assets/brands/Ascension.webp",
+      role: "Church Leadership",
+      summary: "Approved testimonial from this client will be added here.",
+      facts: ["Testimonial pending", "Church website", "Live production website"],
     },
   ];
 
@@ -311,7 +325,7 @@ export default function Home() {
           
           <AnimateOnScroll delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-              {projects.map((project) => (
+              {featuredProjects.map((project) => (
                 <PortfolioCard
                   key={project.title}
                   imageSrc={project.imageSrc}
