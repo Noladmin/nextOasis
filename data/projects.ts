@@ -30,8 +30,8 @@ export const projects: ProjectItem[] = [
     status: "Live client work",
   },
   {
-    title: "List Go",
-    client: "List Go",
+    title: "Listigo",
+    client: "Listigo",
     description:
       "Sell and Buy Near You. Simple, Fast and Efficient. A marketplace platform for local buying and selling.",
     imageSrc: "/assets/brands/projectImages/ListGo.png",
@@ -87,6 +87,16 @@ export const projects: ProjectItem[] = [
     imageSrc: "/assets/brands/projectImages/AscensionMock.png",
     tags: ["Web Development", "UI/UX Design"],
     websiteUrl: "https://www.ascension-anglican.com/",
+    status: "Live client work",
+  },
+  {
+    title: "Dialtech Systems",
+    client: "Dialtech Systems LLC",
+    description:
+      "Protect What Matters Most with Precision Security. Comprehensive protection services from cybersecurity to physical surveillance.",
+    imageSrc: "/assets/brands/projectImages/DaliSys.png",
+    tags: ["Security Systems", "Cybersecurity", "Web Development"],
+    websiteUrl: "https://dialtechsystems.com/",
     status: "Live client work",
   },
 ];
