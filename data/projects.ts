@@ -10,6 +10,36 @@ export interface ProjectItem {
 
 export const projects: ProjectItem[] = [
   {
+    title: "Accounting & Advisory",
+    client: "Modern UK Businesses",
+    description:
+      "Accounting, Advisory & Financial Education for Modern UK Businesses. A specialized platform for financial growth and compliance.",
+    imageSrc: "/assets/brands/projectImages/accountmock.png",
+    tags: ["Accounting", "Financial Advisory"],
+    websiteUrl: "https://bukz-accounting.vercel.app/",
+    status: "Live client work",
+  },
+  {
+    title: "Baytown Energy",
+    client: "Baytown Energy Services Ltd",
+    description:
+      "Oil & Gas services providing company. Baytown Energy Services Ltd is rightly positioned to provide quality services at the right cost and delivery time that is attainable.",
+    imageSrc: "/assets/brands/projectImages/oilCompany.png",
+    tags: ["Oil & Gas", "Engineering"],
+    websiteUrl: "https://baytownenergy.com/",
+    status: "Live client work",
+  },
+  {
+    title: "List Go",
+    client: "List Go",
+    description:
+      "Sell and Buy Near You. Simple, Fast and Efficient. A marketplace platform for local buying and selling.",
+    imageSrc: "/assets/brands/projectImages/ListGo.png",
+    tags: ["Marketplace", "Web Development"],
+    websiteUrl: "https://listigo.co.uk/",
+    status: "Live client work",
+  },
+  {
     title: "South Town Place",
     client: "South Town Catering Services",
     description:
