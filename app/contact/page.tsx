@@ -86,12 +86,23 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                    <p className="text-gray-600">
-                      Director Generals House<br />
-                      15 Rockstone Place<br />
-                      SO15 2EP Southampton, UK
-                    </p>
-                    <p className="text-gray-600 mt-2">Accra, Ghana</p>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="font-semibold text-[#293796] text-sm uppercase tracking-wider mb-1">UK Corporate Headquarters</p>
+                        <p className="text-gray-600">
+                          Director Generals House<br />
+                          15 Rockstone Place<br />
+                          SO15 2EP Southampton, UK
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-[#293796] text-sm uppercase tracking-wider mb-1">African Address</p>
+                        <p className="text-gray-600">
+                          7a Capt. Olajide Street, Lekki Phase 1<br />
+                          Westland Junction, West Legon-Accra
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

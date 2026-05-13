@@ -99,8 +99,13 @@ export default function Footer() {
                 <div className="flex items-start space-x-2">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <div className="break-words">
+                    <p className="font-semibold text-white mb-1">UK Corporate Headquarters</p>
                     <p>15 Rockstone Place</p>
                     <p>SO15 2EP Southampton, UK</p>
+                    
+                    <p className="font-semibold text-white mt-4 mb-1">African Address</p>
+                    <p>7a Capt. Olajide Street, Lekki Phase 1</p>
+                    <p>Westland Junction, West Legon-Accra</p>
                   </div>
                 </div>
               </li>
