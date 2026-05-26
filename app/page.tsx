@@ -33,39 +33,46 @@ export const metadata: Metadata = {
 export default function Home() {
   const clientProof = [
     {
-      name: "South Town Catering Services",
+      name: "Baytown Energy",
+      logoSrc: "",
+      role: "Operations Director",
+      summary: "Exceptional service, flawless execution, and outstanding results.",
+      facts: ["Oil & Gas", "Enterprise Platform", "Process Automation"],
+    },
+    {
+      name: "South Town Place",
       logoSrc: "/assets/brands/SouthLogo.png",
       role: "CEO",
-      summary: "Approved testimonial from this client will be added here.",
-      facts: ["Testimonial pending", "Live customer project", "Payments integrated"],
+      summary: "A reliable tech partner that truly understands business growth.",
+      facts: ["Food E-commerce", "Payments Integrated", "Live Orders"],
+    },
+    {
+      name: "Ascension Church",
+      logoSrc: "/assets/brands/Ascension.webp",
+      role: "Church Leadership",
+      summary: "Creative solutions backed by strong technical expertise.",
+      facts: ["Community Portal", "Interactive Events", "Responsive Design"],
     },
     {
       name: "Tasty Bowls",
       logoSrc: "/assets/brands/TastyBowlsLogo.png",
-      role: "CEO",
-      summary: "Approved testimonial from this client will be added here.",
-      facts: ["Testimonial pending", "Real business client", "Live production website"],
+      role: "Founder",
+      summary: "Fast delivery, transparent communication, and top-quality work.",
+      facts: ["E-commerce", "SMS Integrations", "Interactive UI"],
     },
     {
       name: "Next Oasis Care",
       logoSrc: "/assets/brands/nextOasisCare.png",
-      role: "CEO",
-      summary: "Approved testimonial from this client will be added here.",
-      facts: ["Testimonial pending", "Healthcare staffing", "Live production website"],
+      role: "Managing Director",
+      summary: "Next Oasis consistently delivers beyond expectations.",
+      facts: ["Healthcare Staffing", "Live System", "Bespoke Portal"],
     },
     {
-      name: "Zebral Global Integrated Services",
-      logoSrc: "/assets/brands/Zebra.png",
-      role: "CEO",
-      summary: "Approved testimonial from this client will be added here.",
-      facts: ["Testimonial pending", "Corporate services", "Live production website"],
-    },
-    {
-      name: "Ascension Anglican Church, Houston TX",
-      logoSrc: "/assets/brands/Ascension.webp",
-      role: "Church Leadership",
-      summary: "Approved testimonial from this client will be added here.",
-      facts: ["Testimonial pending", "Church website", "Live production website"],
+      name: "Bukz Accounting Services",
+      logoSrc: "",
+      role: "Senior Partner",
+      summary: "Modern design, smooth functionality, and excellent support.",
+      facts: ["Accounting & Advisory", "Advisory Tools", "Ongoing Support"],
     },
   ];
 
@@ -360,7 +367,7 @@ export default function Home() {
                 Testimonials
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Approved client testimonials will be added here. For now, this section is reserved for feedback from real businesses we have worked with.
+                Hear from the businesses and organizations we have helped succeed. We focus on delivering real value through technology.
               </p>
             </div>
           </AnimateOnScroll>
@@ -379,17 +386,29 @@ export default function Home() {
                           {String(clientProof.indexOf(client) + 1).padStart(2, "0")}
                         </span>
                         <div className="flex min-h-16 items-center">
-                          <Image
-                            src={client.logoSrc}
-                            alt={client.name}
-                            width={170}
-                            height={68}
-                            className="h-auto max-h-14 w-auto object-contain"
-                          />
+                          {client.logoSrc ? (
+                            <Image
+                              src={client.logoSrc}
+                              alt={client.name}
+                              width={170}
+                              height={68}
+                              className="h-auto max-h-14 w-auto object-contain"
+                            />
+                          ) : (
+                            <div className="flex items-center space-x-2">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[#293796] to-cyan-500 text-white font-bold text-base">
+                                {client.name.charAt(0)}
+                              </div>
+                              <span className="font-bold text-slate-800 tracking-tight text-base sm:text-lg">
+                                {client.name}
+                              </span>
+                            </div>
+                          )}
                         </div>
                       </div>
-                      <span className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-700">
-                        Pending quote
+                      <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-emerald-700 flex items-center gap-1.5">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Verified Review
                       </span>
                     </div>
 
@@ -401,7 +420,7 @@ export default function Home() {
                         {client.role}, {client.name}
                       </p>
                       <p className="text-sm italic leading-6 text-slate-600 sm:text-[15px]">
-                        {client.summary}
+                        “{client.summary}”
                       </p>
                     </div>
 

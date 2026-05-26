@@ -103,9 +103,14 @@ export default function Footer() {
                     <p>15 Rockstone Place</p>
                     <p>SO15 2EP Southampton, UK</p>
                     
-                    <p className="font-semibold text-white mt-4 mb-1">African Address</p>
-                    <p>7a Capt. Olajide Street, Lekki Phase 1</p>
-                    <p>Westland Junction, West Legon-Accra</p>
+                    <p className="font-semibold text-white mt-4 mb-1">African Presence</p>
+                    <p className="font-medium text-gray-400 text-xs uppercase tracking-wider mt-2 mb-0.5">Nigeria</p>
+                    <p>7A Capt. Olajide George Street,</p>
+                    <p>Lekki Phase 1, Lagos, Nigeria</p>
+                    
+                    <p className="font-medium text-gray-400 text-xs uppercase tracking-wider mt-2 mb-0.5">Ghana</p>
+                    <p>Westland, West Legon,</p>
+                    <p>Accra, Ghana.</p>
                   </div>
                 </div>
               </li>

@@ -96,11 +96,23 @@ export default function ContactPage() {
                         </p>
                       </div>
                       <div>
-                        <p className="font-semibold text-[#293796] text-sm uppercase tracking-wider mb-1">African Address</p>
-                        <p className="text-gray-600">
-                          7a Capt. Olajide Street, Lekki Phase 1<br />
-                          Westland Junction, West Legon-Accra
-                        </p>
+                        <p className="font-semibold text-[#293796] text-sm uppercase tracking-wider mb-1">African Presence</p>
+                        <div className="space-y-3 mt-2">
+                          <div>
+                            <p className="font-semibold text-gray-800 text-xs uppercase tracking-wider mb-0.5">Nigeria</p>
+                            <p className="text-gray-600">
+                              7A Capt. Olajide George Street<br />
+                              Lekki Phase 1, Lagos, Nigeria
+                            </p>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-800 text-xs uppercase tracking-wider mb-0.5">Ghana</p>
+                            <p className="text-gray-600">
+                              Westland, West Legon<br />
+                              Accra, Ghana.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
